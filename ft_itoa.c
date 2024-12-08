@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 15:48:24 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/30 15:48:26 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/08 13:11:52 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/08 13:11:54 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_count_int(int num)
 {
-	size_t	i;
-	size_t	src_len;
+	int	i;
 
-	i = 0;
-	src_len = 0;
-	while (src[src_len] != '\0')
-		src_len++;
-	if (size != 0)
+	i = 1;
+	if(num < 0)
+		i++;
+	while (num > 9 || num < -9)
 	{
-		while (i < size - 1 && (src[i] || dest[i]))
-		{
-			dest[i] = src[i];
-			i++;
-		}
+		num = num / 10;
+		i++;
 	}
-	dest[i] = '\0';
-	return (src_len);
+	return(i);
+}
+
+char	*ft_itoa(int n)
+{
+	int	l;
+	char	*buffer;
+
+	l = ft_count_int(n);
+	buffer = ft_calloc(l + 1, sizeof(char));
+	if(n < 0)
+		buffer[0] = '-';
+	while(n)
+	{
+		if(n < 0)
+			buffer[l - 1] = '0' + ((n % 10)* -1);
+		else
+			buffer[l - 1] = '0' + (n % 10);
+		n = n / 10;
+		l--; 
+	}
+	return(buffer);
 }

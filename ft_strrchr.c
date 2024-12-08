@@ -12,11 +12,11 @@
 
 char	*ft_strrchr(char *str, char chr)
 {
-	int	i;
+	int		i;
 	char	*s;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == chr)
 			s = &str[i];

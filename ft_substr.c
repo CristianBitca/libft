@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 20:51:30 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/26 20:51:31 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/03 13:38:12 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/03 13:38:14 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
-	size_t	i;
+	unsigned	i;
+	char	*buffer;
 
 	i = 0;
-	while ((str1[i] || str2[i]) && i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
+	buffer = ft_calloc(n + 1, sizeof(char));
+	ft_strlcpy(buffer,&s[start],n);
+	return(buffer);
 }

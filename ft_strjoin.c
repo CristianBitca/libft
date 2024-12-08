@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 20:51:30 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/26 20:51:31 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/06 13:29:29 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/06 13:29:30 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	i;
+	char	*buffer;
 
-	i = 0;
-	while ((str1[i] || str2[i]) && i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
+	buffer = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	ft_strlcpy(buffer, s1, ft_strlen(s1) + 1);
+	ft_strlcat(buffer, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	return(buffer);
 }

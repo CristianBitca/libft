@@ -20,5 +20,5 @@ void	ft_bzero(void *str, size_t n)
 		*(char *)str++ = '\0';
 		i++;
 	}
-	return(0);
+	return (0);
 }

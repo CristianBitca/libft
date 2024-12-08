@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 20:51:30 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/26 20:51:31 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/03 12:03:16 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/03 12:03:18 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+void    *ft_calloc(size_t n, size_t size)
 {
-	size_t	i;
+	char    *ptr;
+	size_t  i;
 
 	i = 0;
-	while ((str1[i] || str2[i]) && i < n)
+	ptr = malloc(n * size);
+	while (i < n * size)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		ptr[i] = '\0';
 		i++;
 	}
-	return (0);
+	return (ptr);
 }
