@@ -19,6 +19,6 @@ char	*ft_strdup(const char *s)
 	buffer = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (buffer == NULL)
 		return (0);
-	ft_strlcpy(buffer, s, ft_strlen(s));
+	ft_strlcpy(buffer, s, ft_strlen(s) + 1);
 	return (buffer);
 }

@@ -1,31 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 14:17:22 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/29 14:17:23 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/08 18:43:10 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/08 18:43:13 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+#include "libft.h"
+#include <stdio.h>
+
+int	ft_count_del(char const *s, char c)
 {
-	char	*temp;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i != n)
+	while(*s++)
 	{
-		temp[i] = *(char *)src++;
-		i++;
+		if(*s == c)
+			i++;
 	}
+	return(i);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char **buffer;
+	int	delim;
+	int	i;
+	int	j;
+
 	i = 0;
-	while (i != n)
+	delim = ft_count_del(s, c);
+	while (*s || delim)
 	{
-		*(char *)dest++ = temp[i];
-		i++;
+		j = 0;
+		while (*s != c)
+		{
+			
+		}
 	}
-	return (dest);
+	return(buffer);
+}
+
+int	main(void)
+{
+	char *string = "one,two,three,four";
+
+	ft_split(string, ',');
+	return(0);
 }

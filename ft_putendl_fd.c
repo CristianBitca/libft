@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 14:17:22 by cbitca            #+#    #+#             */
-/*   Updated: 2024/11/29 14:17:23 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/08 17:24:15 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/08 17:24:17 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	char	*temp;
-	size_t	i;
+#include "libft.h"
 
-	i = 0;
-	while (i != n)
+void	ft_putendl_fd(char *s, int fd)
+{
+	while(*s++)
 	{
-		temp[i] = *(char *)src++;
-		i++;
+		ft_putchar_fd(&s);
+		ft_putchar_fd('\n');
 	}
-	i = 0;
-	while (i != n)
-	{
-		*(char *)dest++ = temp[i];
-		i++;
-	}
-	return (dest);
 }
