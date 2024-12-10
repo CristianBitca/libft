@@ -16,11 +16,14 @@ char	*ft_strrchr(char *str, char chr)
 	char	*s;
 
 	i = 0;
+	s = '\0';
 	while (str[i])
 	{
 		if (str[i] == chr)
 			s = &str[i];
 		i++;
 	}
+	if (str[i] == chr)
+		return (&str[i]);
 	return (s);
 }

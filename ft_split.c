@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-/*char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char **buffer;
 	int	i;
@@ -29,4 +29,4 @@ int	main(void)
 
 	ft_split(string, ',');
 	return(0);
-}*/
+}

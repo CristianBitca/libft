@@ -12,7 +12,7 @@
 
 int	ft_tolower(int c)
 {
-	if ('a' <= c && 'z' >= c)
-		return (c);
-	return (c + 32);
+	if ('A' <= c && 'Z' >= c)
+		return (c + 32);
+	return (c);
 }

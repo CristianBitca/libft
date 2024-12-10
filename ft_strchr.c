@@ -21,5 +21,7 @@ char	*ft_strchr(char *str, char chr)
 			return (&str[i]);
 		i++;
 	}
+	if (str[i] == chr)
+		return (&str[i]);
 	return (0);
 }
