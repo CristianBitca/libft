@@ -12,41 +12,32 @@
 
 #include "libft.h"
 
-int    find_set(char const *set, char c)
+int	find_set(char const *set, char c)
 {
-    int i;
-    
-    i = 0;
-    while(set[i])
-    {
-        if(set[i] == c)
-            return(1);
-          i++;
-    }
-    return (0);
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*buffer;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while(find_set(set,s1[i]))
+	while (find_set(set, s1[i]))
 		i++;
-	while(find_set(set,s1[j]))
+	while (find_set(set, s1[j]))
 		j--;
 	buffer = ft_substr(s1, i, j);
-	return(buffer);
-}
-
-int	main(void)
-{
-	char *s = "  try this   ";
-	char *rem = " ";
-
-	printf("%s",ft_strtrim(s, rem));
-	return (0);
+	return (buffer);
 }

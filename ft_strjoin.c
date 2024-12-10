@@ -19,5 +19,5 @@ char	*ft_strjoin(char *s1, char *s2)
 	buffer = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	ft_strlcpy(buffer, s1, ft_strlen(s1) + 1);
 	ft_strlcat(buffer, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
-	return(buffer);
+	return (buffer);
 }

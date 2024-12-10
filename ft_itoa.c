@@ -17,33 +17,33 @@ int	ft_count_int(int num)
 	int	i;
 
 	i = 1;
-	if(num < 0)
+	if (num < 0)
 		i++;
 	while (num > 9 || num < -9)
 	{
 		num = num / 10;
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	int	l;
 	char	*buffer;
+	int		l;
 
 	l = ft_count_int(n);
 	buffer = ft_calloc(l + 1, sizeof(char));
-	if(n < 0)
+	if (n < 0)
 		buffer[0] = '-';
-	while(n)
+	while (n)
 	{
-		if(n < 0)
-			buffer[l - 1] = '0' + ((n % 10)* -1);
+		if (n < 0)
+			buffer[l - 1] = '0' + ((n % 10) * -1);
 		else
 			buffer[l - 1] = '0' + (n % 10);
 		n = n / 10;
-		l--; 
+		l--;
 	}
-	return(buffer);
+	return (buffer);
 }
