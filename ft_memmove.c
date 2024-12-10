@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*temp;
 	size_t	i;
 
 	i = 0;
+	temp = 0;
 	while (i != n)
 	{
 		temp[i] = *(char *)src++;

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	ft_bzero(void *str, size_t n)
 {
 	unsigned int	i;
@@ -20,5 +22,4 @@ void	ft_bzero(void *str, size_t n)
 		*(char *)str++ = '\0';
 		i++;
 	}
-	return (0);
 }

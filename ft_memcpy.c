@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
+
 void	*ft_memcpy(void *dest, void *src, size_t n)
 {
 	unsigned int	i;

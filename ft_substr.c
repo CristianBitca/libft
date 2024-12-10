@@ -14,10 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
-	unsigned	i;
 	char	*buffer;
 
-	i = 0;
 	buffer = ft_calloc(n + 1, sizeof(char));
 	ft_strlcpy(buffer,&s[start],n);
 	return(buffer);

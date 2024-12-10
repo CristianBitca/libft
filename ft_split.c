@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_count_del(char const *s, char c)
+/*int	ft_count_del(char const *s, char c)
 {
 	int	i;
 
@@ -52,4 +52,4 @@ int	main(void)
 
 	ft_split(string, ',');
 	return(0);
-}
+}*/
