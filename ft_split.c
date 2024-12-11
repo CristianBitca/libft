@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	count_words(char const *s, char c)
 {
@@ -38,32 +37,25 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 	int		a;
+	int		count;
 
 	i = 0;
 	j = 0;
 	a = 0;
+	count = count_words(s, c);
 	array = ft_calloc(count_words(s, c) + 1, sizeof(char *));
-	while (s[i])
+	while (s[i] && count != 0)
 	{
-		while (s[i] == c)
+		while (s[i++] == c)
 			i++;
 		if (s[i] != c)
 			j = i;
 		while (s[i] != c && s[i])
 			i++;
-		array[a] = ft_substr(s, j, i - j);
-		a++;
+		array[a++] = ft_substr(s, j, i - j);
 		while (s[i] == c)
 			i++;
 	}
 	array[a] = NULL;
 	return (array);
-}
-
-int	main(void)
-{
-	char *string = "one,two,three,four";
-
-	ft_split(string, ',');
-	return(0);
 }

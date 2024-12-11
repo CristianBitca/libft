@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 11:12:11 by cbitca            #+#    #+#             */
-/*   Updated: 2024/12/02 11:12:12 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/11 19:19:50 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/11 19:19:52 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (32 <= c && 126 >= c)
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
