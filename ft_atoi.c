@@ -38,9 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
-int	main(void)
-{
-	printf("%d", ft_atoi("469"));
-	return (0);
-}
