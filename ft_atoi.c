@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -20,17 +21,26 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	result = 0;
+	sign = 1;
 	while (nptr[i] == ' ' || ('\t' <= nptr[i] && '\r' >= nptr[i]))
 		i++;
-	if (nptr[i] == '+')
-		sign = 1;
-	else if (nptr[i] == '-')
+	if (nptr[i] == '-')
+	{
 		sign = -1;
-	i++;
+		i++;
+	}
+	if (nptr[i] == '+')
+		i++;
 	while ('0' <= nptr[i] && '9' >= nptr[i])
 	{
 		result = result * 10 + nptr[i] - '0';
 		i++;
 	}
 	return (result * sign);
+}
+
+int	main(void)
+{
+	printf("%d", ft_atoi("469"));
+	return (0);
 }
