@@ -26,9 +26,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
-
-int main(void)
-{
-	ft_substr("lorem ipsum dolor sit amet", 7, 10);
-	return (0);
-}
