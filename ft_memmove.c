@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_memcpy.c"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
