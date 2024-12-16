@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	if (start == 0)
 		ft_strlcpy(buffer, &s[start], n + 1);
 	else if (start + n > ft_strlen(s))
-		ft_strlcpy(buffer, &s[start], ft_strlen(s) - start);
+		ft_strlcpy(buffer, &s[start], ft_strlen(s) - start + 1);
 	else
 		ft_strlcpy(buffer, &s[start], n);
 	return (buffer);
