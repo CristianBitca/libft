@@ -17,10 +17,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned int	i;
 
 	i = 0;
-	while (i != n)
+	while (i != n - 1)
 	{
 		if (*(char *)s1++ != *(char *)s2++)
-			return (*(char)s1 - *(char)s2);
+			return (*(char *)s1 - *(char *)s2);
 		i++;
 	}
 	return (0);
