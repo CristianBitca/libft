@@ -22,10 +22,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	buffer = ft_calloc(n + 1, sizeof(char));
 	if (start == 0)
 		ft_strlcpy(buffer, &s[start], n + 1);
-	else if (start + n > ft_strlen(s))
-		ft_strlcpy(buffer, &s[start], ft_strlen(s) - start + 1);
 	else
-		ft_strlcpy(buffer, &s[start], n);
+		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
 
+int main(void)
+{
+	ft_substr("lorem ipsum dolor sit amet", 7, 10);
+	return (0);
+}
