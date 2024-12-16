@@ -39,10 +39,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-int	main()
-{
-	char 	s1[] = "one two three";
-	char	s2[] = "two";
-	ft_memmove(s1 + 5, s1, 3);
-}
