@@ -22,7 +22,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	buffer = ft_calloc(n + 1, sizeof(char));
 	if (start == 0)
 		ft_strlcpy(buffer, &s[start], n + 1);
+	else if (ft_strlen(s) < start + n)
+		ft_strlcpy(buffer, &s[start], n + 1);
 	else
 		ft_strlcpy(buffer, &s[start], n);
 	return (buffer);
+}
+
+int main(void)
+{
+	ft_substr("0123456789", 7, 10);
+	return (0);
 }
