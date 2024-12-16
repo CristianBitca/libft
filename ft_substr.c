@@ -28,9 +28,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 		ft_strlcpy(buffer, &s[start], n);
 	return (buffer);
 }
-
-int main(void)
-{
-	ft_substr("0123456789", 7, 10);
-	return (0);
-}
