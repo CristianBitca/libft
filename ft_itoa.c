@@ -33,8 +33,9 @@ char	*ft_itoa(int n)
 	int		l;
 
 	l = ft_count_int(n);
-	if (l != 0)
-		buffer = ft_calloc(l + 1, sizeof(char));
+	buffer = ft_calloc(l + 1, sizeof(char));
+	if (!buffer)
+		return (0);
 	if (n == 0)
 		buffer[0] = '0';
 	if (n < 0)
