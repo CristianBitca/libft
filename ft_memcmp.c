@@ -20,7 +20,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i != n)
 	{
 		if (*(char *)s1++ != *(char *)s2++)
-			return (*(char *)s1 - *(char *)s2);
+			return (*(char)s1 - *(char)s2);
 		i++;
 	}
 	return (0);
