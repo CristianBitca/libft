@@ -11,16 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_calloc.c"
+#include "ft_strlcpy.c"
 
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
 	char	*buffer;
-	size_t	l;
 
-	l = ft_strlen(s);
-	if (start >= l)
-		return ("");
 	buffer = ft_calloc(n + 1, sizeof(char));
 	ft_strlcpy(buffer, &s[start], n);
 	return (buffer);
+}
+
+int main(void)
+{
+	ft_substr("lorem ispu", 0, 10);
+	return (0);
 }
