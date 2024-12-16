@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_memcpy.c"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -19,17 +20,29 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	t_dest = (unsigned char *)dest;
 	t_src = (unsigned char *)src;
-	if (!t_dest && !t_src)
-		return (NULL);
+	if (dest == (void *)0 && src == (void *)0)
+		return (dest);
 	if (t_dest > t_src)
 	{
+		t_dest += n - 1;
+		t_src += n - 1;
 		while (n)
 		{
-			t_dest[n] = t_src[n];
+			*t_dest-- = *t_src--;
 			n--;
 		}
 	}
-	else
-		ft_memcpy(t_dest, t_src, n);
+	else while (n)
+	{
+		*t_dest++ = *t_src++;
+		n--;
+	}
 	return (dest);
+}
+
+int	main()
+{
+	char 	s1[] = "one two three";
+	char	s2[] = "two";
+	ft_memmove(s1 + 5, s1, 3);
 }
