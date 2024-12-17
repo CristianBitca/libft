@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 			j = i;
 		while (s[i] != c && s[i])
 			i++;
-		array[a++] = ft_substr(s, j, i - j);
+		*array++ = ft_substr(s, j, i - j);
 		while (s[i] == c && s[i])
 			i++;
 	}
