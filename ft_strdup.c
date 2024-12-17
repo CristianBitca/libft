@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
+	int		l;
 	char	*buffer;
-	int	l;
 
 	l = ft_strlen(s);
 	buffer = ft_calloc(l + 1, sizeof(char));
