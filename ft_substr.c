@@ -15,10 +15,15 @@
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
 	char	*buffer;
+	int	l;
 
-	if (start >= ft_strlen(s))
+	l = ft_strlen(s);
+	if (start >= l)
 		return(ft_strdup(""));
-	buffer = ft_calloc(n + 1, sizeof(char));
+	if (start + n > l)
+		buffer = ft_calloc(l - start + 1, sizeof(char));
+	else
+		buffer = ft_calloc(n + 1, sizeof(char));
 	if (!buffer)
 		return ("");
 	if (n == 1)
