@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_calloc.c"
-#include "ft_strlcpy.c"
-#include "ft_strlen.c"
 
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
