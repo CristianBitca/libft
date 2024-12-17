@@ -51,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i++;
 		while (ft_strchr(set, s1[j - 1]))
 			j--;
-		buffer = ft_substr(s1, i, j - i - 1);
+		buffer = ft_substr(s1, i, j - i);
 	}
 	return (buffer);
 }
