@@ -30,9 +30,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
-
-int	main(void)
-{
-	ft_substr("", 4294967295, 0);
-	return (0);
-}
