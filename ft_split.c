@@ -43,7 +43,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	a = 0;
 	count = count_words(s, c);
-	array = ft_calloc(count_words(s, c) + 1, sizeof(char *));
+	array = ft_calloc(count + 1, sizeof(char *));
 	while (s[i] && count != 0)
 	{
 		while (s[i++] == c)
