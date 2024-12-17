@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include "ft_strlen.c"
+#include "ft_strlen.c"
 #include "ft_substr.c"
 #include "ft_strdup.c"
 #include "ft_calloc.c"
-#include "ft_strlcpy.c"*/
+#include "ft_strlcpy.c"
 
 int	find_set(char const *set, char c)
 {
@@ -50,16 +50,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i++;
 		while (find_set(set, s1[j - 1]))
 			j--;
-		ft_strlcpy(buffer, &s1[i], j + 1);
-
+		buffer = ft_substr(s1, i, j);
 	}
 	return (buffer);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char s1[] = "lorem ipsum dolor sit amet";
 
 	ft_strtrim(s1, "tel");
 	return (0);
-}*/
+}
