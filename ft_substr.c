@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	unsigned int	l;
 
 	l = ft_strlen(s);
-	if (start <= l)
+	if (start >= l)
 		return(ft_strdup(""));
 	if (start + n > l)
 		buffer = ft_calloc(l - start + 1, sizeof(char));
@@ -26,9 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 		buffer = ft_calloc(n + 1, sizeof(char));
 	if (!buffer)
 		return (NULL);
-	if (n == 1)
-		ft_strlcpy(buffer, &s[start], n);
-	else
-		ft_strlcpy(buffer, &s[start], n + 1);
+	ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
