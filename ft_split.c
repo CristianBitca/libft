@@ -36,15 +36,15 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 	int		i;
 	int		j;
-	int		count;
+	int		a;
 
 	i = 0;
 	j = 0;
-	count = count_words(s, c);
-	array = ft_calloc(count + 1, sizeof(char *));
+	a = 0;
+	array = ft_calloc(count_words(s, c) + 1, sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (s[i] && count != 0)
+	while (s[i] && count_words(s, c) != 0)
 	{
 		while (s[i] == c && s[i])
 			i++;
@@ -52,9 +52,10 @@ char	**ft_split(char const *s, char c)
 			j = i;
 		while (s[i] != c && s[i])
 			i++;
-		*array++ = ft_substr(s, j, i - j);
+		array[a++] = ft_substr(s, j, i - j);
 		while (s[i] == c && s[i])
 			i++;
 	}
+	array[a] = NULL;
 	return (array);
 }
