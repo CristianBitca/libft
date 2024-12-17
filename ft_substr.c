@@ -26,6 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 		buffer = ft_calloc(n + 1, sizeof(char));
 	if (!buffer)
 		return (NULL);
-	ft_strlcpy(buffer, &s[start], n - 1);
+	ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
