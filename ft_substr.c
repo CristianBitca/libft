@@ -21,10 +21,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 
 	buffer = ft_calloc(n + 1, sizeof(char));
 	if (!buffer)
-		return (ft_strdup(""));
+		return ("");
+	if (start > ft_strlen(s))
+		return (buffer);
 	if (n == 1)
 		ft_strlcpy(buffer, &s[start], n);
 	else
 		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
+}
+
+int	main(void)
+{
+	ft_substr("", 4294967295, 0);
+	return (0);
 }
