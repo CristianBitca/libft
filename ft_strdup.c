@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
+}
+
 char	*ft_strdup(const char *s)
 {
 	char	*buffer;
