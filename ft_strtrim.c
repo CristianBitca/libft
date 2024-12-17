@@ -37,13 +37,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	while (find_set(set, s1[i]))
-		i++;
-	while (find_set(set, s1[j]))
-		j--;
-	buffer = ft_substr(s1, i, j);
+	if (s1 && set)
+	{
+		i = 0;
+		j = ft_strlen(s1) - 1;
+		while (find_set(set, s1[i]))
+			i++;
+		while (find_set(set, s1[j]))
+			j--;
+		buffer = ft_substr(s1, i, j);
+	}
 	return (buffer);
 }
 
