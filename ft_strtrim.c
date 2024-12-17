@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j = ft_strlen(s1);
 		while (find_set(set, s1[i]))
 			i++;
-		while (find_set(set, s1[j]))
+		while (find_set(set, s1[j - 1]))
 			j--;
 		buffer = ft_substr(s1, i, j);
 	}
