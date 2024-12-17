@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
 	char	*buffer;
-	int	l;
+	unsigned int	l;
 
 	l = ft_strlen(s);
 	if (start >= l)
