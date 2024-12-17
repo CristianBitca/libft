@@ -46,14 +46,14 @@ char	**ft_split(char const *s, char c)
 	array = ft_calloc(count + 1, sizeof(char *));
 	while (s[i] && count != 0)
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 		if (s[i] != c)
 			j = i;
 		while (s[i] != c && s[i])
 			i++;
 		array[a++] = ft_substr(s, j, i - j);
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 	}
 	array[a] = NULL;
