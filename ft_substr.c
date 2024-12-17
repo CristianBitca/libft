@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	buffer = ft_calloc(n + 1, sizeof(char));
 	if (!buffer)
 		return ("");
-	if (start > ft_strlen(s))
+	if (n > ft_strlen(s))
 		return (buffer);
 	if (n == 1)
 		ft_strlcpy(buffer, &s[start], n);
