@@ -11,19 +11,26 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "ft_calloc.c"
+#include "ft_strlcpy.c"
+#include "ft_strlen.c"
 
 char	*ft_substr(char const *s, unsigned int start, size_t n)
 {
 	char	*buffer;
 
 	buffer = ft_calloc(n + 2, sizeof(char));
-	if (!buffer && s)
+	if (!buffer || ft_strlen(s) < start)
 		return ("");
 	if (n == 1)
 		ft_strlcpy(buffer, &s[start], n);
 	else
 		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
+}
+
+int	main(void)
+{
+	ft_substr("hola", 4294967295, 0);
+	return (0);
 }
