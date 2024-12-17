@@ -24,6 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	if (n == 1)
 		ft_strlcpy(buffer, &s[start], n + 1);
 	else
-		ft_strlcpy(buffer, &s[start], n);
+		ft_strlcpy(buffer, &s[start], n + 1);
 	return (buffer);
 }
