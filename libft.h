@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list		*next;
+}	t_list;
+
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
