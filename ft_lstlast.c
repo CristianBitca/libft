@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 
 	i = 0;
 	if (!lst)
-		return (lst);
+		return (0);
 	while (i < ft_lstsize(lst))
 	{
 		i++;
