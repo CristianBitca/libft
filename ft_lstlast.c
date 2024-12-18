@@ -20,7 +20,7 @@ t_list	*ft_lstlast(t_list *lst)
 	i = 0;
 	if (!lst)
 		return (0);
-	size = ft(ft_lstsize(lst));
+	size = ft_lstsize(lst);
 	while (i < size)
 	{
 		i++;
