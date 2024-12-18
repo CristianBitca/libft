@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 14:14:52 by cbitca            #+#    #+#             */
-/*   Updated: 2024/12/18 14:14:54 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/18 15:56:06 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/18 15:56:07 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *l;
-
-	l = ft_calloc(sizeof(t_list), 1);
-	if (!l)
+	if (!lst || !new)
 		return (NULL);
-	l->content = content;
-	l->next = NULL;
-	return(l);
+	new->next = *lst;
+	*lst = new;
 }
-
-/*int main(void)
-{
-	t_list *l;
-
-	l = ft_lstnew("test");
-	printf("%s", (char *)l->content);
-	free (l);
-	return (0);
-}*/
