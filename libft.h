@@ -64,4 +64,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
+t_list	*ft_lstnew(void *content);
+
 #endif
