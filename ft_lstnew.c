@@ -14,14 +14,14 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *l;
+	t_list	*l;
 
 	l = ft_calloc(sizeof(t_list), 1);
 	if (!l)
 		return (NULL);
 	l->content = content;
 	l->next = NULL;
-	return(l);
+	return (l);
 }
 
 /*int main(void)

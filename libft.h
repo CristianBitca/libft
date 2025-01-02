@@ -19,8 +19,8 @@
 
 typedef struct s_list
 {
-	void			*content;
-	struct s_list		*next;
+	void	*content;
+	struct s_list	*next;
 }	t_list;
 
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
@@ -72,5 +72,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
