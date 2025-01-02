@@ -34,8 +34,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (res);
 }
 
-int	*multiple(void *content)
+/*int	*multiple(void *content)
 {
+	int	val;
+	val = 
 	return(*(int *)content * 10);
 }
 
@@ -60,4 +62,4 @@ int	main(void)
 		res = res->next;
 	}
 	return (0);
-}
+}*/
