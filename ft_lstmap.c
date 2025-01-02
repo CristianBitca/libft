@@ -33,3 +33,31 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (res);
 }
+
+int	*multiple(void *content)
+{
+	return(*(int *)content * 10);
+}
+
+void	del(void *content)
+{
+	free(content);
+}
+
+int	main(void)
+{
+	t_list	*lst;
+	t_list	*res;
+	
+	lst = ft_lstnew((int *)1);
+	ft_lstadd_back(&lst, ft_lstnew((int *)2));
+	ft_lstadd_back(&lst, ft_lstnew((int *)3));
+
+	res = ft_lstmap(lst, multiple, del);
+	while (res)
+	{
+		printf("%d\n", *(int *)res->content);
+		res = res->next;
+	}
+	return (0);
+}
