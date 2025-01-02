@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -10,18 +9,12 @@
 /*   Updated: 2024/12/18 20:13:33 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-=======
->>>>>>> 327597c (bonus)
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;
-<<<<<<< HEAD
-
-	
-=======
 	t_list	*temp;
 	void	*content;
 
@@ -42,5 +35,4 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	return (res);
->>>>>>> 327597c (bonus)
 }
