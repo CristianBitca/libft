@@ -42,7 +42,6 @@ void	*multiple(void *content)
 	*val = *(int *)content;
 	res = malloc(sizeof(int));
 	*res = *val * 10;
-	//return((void *)((*((int *)content)) * 10));
 	return (res);
 }
 
