@@ -34,7 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (res);
 }
 
-void	*multiple(void *content)
+/*void	*multiple(void *content)
 {
 	int *res = malloc(sizeof(int));
 	int *val;
@@ -71,4 +71,4 @@ int	main(void)
 		res = res->next;
 	}
 	return (0);
-}
+}*/
