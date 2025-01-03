@@ -36,11 +36,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 void	*multiple(void *content)
 {
-	int *res;
+	int *res = malloc(sizeof(int));
 	int *val;
 
-	*val = *(int *)content;
-	res = malloc(sizeof(int));
+	val = (int *)content;
 	*res = *val * 10;
 	return (res);
 }
@@ -54,11 +53,17 @@ int	main(void)
 {
 	t_list	*lst;
 	t_list	*res;
-	
-	lst = ft_lstnew((int *)1);
-	ft_lstadd_back(&lst, ft_lstnew((int *)2));
-	ft_lstadd_back(&lst, ft_lstnew((int *)3));
+	int	*val1 = malloc(sizeof(int));
+	int	*val2 = malloc(sizeof(int));
+	int	*val3 = malloc(sizeof(int));
 
+	lst = NULL;
+	*val1 = 1;
+	*val2 = 2;
+	*val3 = 3;
+	ft_lstadd_back(&lst, ft_lstnew(val1));
+	ft_lstadd_back(&lst, ft_lstnew(val2));
+	ft_lstadd_back(&lst, ft_lstnew(val3));
 	res = ft_lstmap(lst, multiple, del);
 	while (res)
 	{
