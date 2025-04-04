@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -41,6 +41,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_lstsize(t_list *lst);
+int		ft_printf(const char *str, ...);
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);

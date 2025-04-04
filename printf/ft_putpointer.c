@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 13:29:29 by cbitca            #+#    #+#             */
-/*   Updated: 2024/12/06 13:29:30 by cbitca           ###   ########.fr       */
+/*   Created: 2025/01/06 18:27:00 by cbitca            #+#    #+#             */
+/*   Updated: 2025/01/06 18:27:01 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_putpointer(void *ptr)
 {
-	char	*buffer;
-	int	len_s1;
-	int	len_s2;
+	int	res;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	buffer = ft_calloc(len_s1 + len_s2 + 1, sizeof(char));
-	if (!buffer)
-		return (NULL);
-	ft_strlcpy(buffer, s1, len_s1 + 1);
-	ft_strlcat(buffer, s2, len_s1 + len_s2 + 1);
-	return (buffer);
+	res = 0;
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	res += ft_putstr("0x");
+	res += ft_putnbr_hexa(*(unsigned long *)&ptr, 'x');
+	return (res);
 }

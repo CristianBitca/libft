@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_unsigneditoa.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 13:29:29 by cbitca            #+#    #+#             */
-/*   Updated: 2024/12/06 13:29:30 by cbitca           ###   ########.fr       */
+/*   Created: 2024/12/08 13:11:52 by cbitca            #+#    #+#             */
+/*   Updated: 2024/12/08 13:11:54 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_count_unsignedint(unsigned int num)
+{
+	int	i;
+
+	i = 1;
+	while (num > 9)
+	{
+		num = num / 10;
+		i++;
+	}
+	return (i);
+}
+
+char	*ft_unsigneditoa(unsigned int n)
 {
 	char	*buffer;
-	int	len_s1;
-	int	len_s2;
+	int		l;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	buffer = ft_calloc(len_s1 + len_s2 + 1, sizeof(char));
+	l = ft_count_unsignedint(n);
+	buffer = ft_calloc(l + 1, sizeof(char));
 	if (!buffer)
-		return (NULL);
-	ft_strlcpy(buffer, s1, len_s1 + 1);
-	ft_strlcat(buffer, s2, len_s1 + len_s2 + 1);
+		return (0);
+	if (n == 0)
+		buffer[0] = '0';
+	while (l)
+	{
+		buffer[l - 1] = '0' + (n % 10);
+		n = n / 10;
+		l--;
+	}
 	return (buffer);
 }

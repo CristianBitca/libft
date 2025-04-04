@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/06 15:30:27 by cbitca            #+#    #+#             */
+/*   Updated: 2025/01/06 15:30:28 by cbitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	format(va_list args, char c)
+{
+	int	var_return;
+
+	var_return = 0;
+	if (c == 'c')
+		var_return += ft_putchr(va_arg(args, int));
+	else if (c == 's')
+		var_return += ft_putstr(va_arg(args, char *));
+	else if (c == 'p')
+		var_return += ft_putpointer(va_arg(args, void *));
+	else if (c == 'i' || c == 'd')
+		var_return += ft_putnbr(va_arg(args, int));
+	else if (c == 'u')
+		var_return += ft_unsigned(va_arg(args, unsigned int));
+	else if (c == 'x' || c == 'X')
+		var_return += ft_putnbr_hexa(va_arg(args, unsigned int), c);
+	else if (c == '%')
+		var_return += ft_putchr('%');
+	return (var_return);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
+	int		var_return;
+
+	va_start(args, str);
+	var_return = 0;
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			var_return += format(args, *++str);
+			str++;
+		}
+		else
+		{
+			var_return += ft_putchr(*str);
+			str++;
+		}
+	}
+	va_end(args);
+	return (var_return);
+}
+
