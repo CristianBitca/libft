@@ -41,7 +41,6 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_lstsize(t_list *lst);
-int		ft_printf(const char *str, ...);
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
@@ -77,6 +76,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_get_next_line(int fd);
+char	*ft_strcpy(char *dest, char *src);
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);

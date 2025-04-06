@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpointer.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 18:27:00 by cbitca            #+#    #+#             */
-/*   Updated: 2025/01/06 18:27:01 by cbitca           ###   ########.fr       */
+/*   Created: 2025/04/06 17:44:24 by cbitca            #+#    #+#             */
+/*   Updated: 2025/04/06 17:44:25 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putpointer(void *ptr)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	res;
+	int	i;
 
-	res = 0;
-	if (!ptr)
-		return (ft_putstr("(nil)"));
-	res += ft_putstr("0x");
-	res += ft_putnbr_hexa(*(unsigned long *)&ptr, 'x');
-	return (res);
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

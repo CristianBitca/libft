@@ -6,44 +6,40 @@
 #    By: cbitca <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 16:14:15 by cbitca            #+#    #+#              #
-#    Updated: 2024/12/09 16:14:20 by cbitca           ###   ########.fr        #
+#    Updated: 2025/04/06 17:46:38 by cbitca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-					ft_itoa.c ft_memcpy.c ft_putendl_fd.c ft_strchr.c ft_strlcpy.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c ft_isascii.c ft_split.c \
-					ft_memmove.c ft_putnbr_fd.c ft_strdup.c ft_strlen.c ft_strrchr.c \
-					ft_toupper.c ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c \
-					ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
+LIB_DIR		=	libft
 
-SRCS_B			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-					ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+MAKE_LIB	=	@make --no-print-directory -C
 
-OBJS			= $(SRCS:.c=.o)
-OBJS_B			= $(SRCS_B:.c=.o)
+PRINTF_DIR	=	$(LIB_DIR)/ft_printf
+PRINTF_FILE	=	printf.a
+PRINTF		=	$(PRINTF_DIR)/$(PRINTF_FILE)
+CFLAGS		+=	-I$(PRINTF_DIR)/include
+LIB		+=	$(PRINTF)
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+LIBFT_DIR	=	$(LIB_DIR)/libft
+LIBFT_FILE	=	libft.a
+LIBFT		=	$(LIBFT_DIR)/$(LIBFT_FILE)
+CFLAGS		+=	-I$(LIBFT_DIR)/include
+LIB		+=	$(LIBFT)
 
-NAME			= libft.a
+$(PRINTF):
+	$(MAKE_LIB) $(PRINTF_DIR)
 
-all:			$(NAME)
+$(LIBFT):
+	$(MAKE_LIB) $(LIBFT_DIR)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+lib_clean:
+	$(MAKE_LIB) $(PRINTF_DIR) clean
+	$(MAKE_LIB) $(LIBFT_DIR) clean
 
-bonus:
-			@make OBJS="$(OBJS_B) $(OBJS)" all  
+lib_fclean:
+	$(MAKE_LIB) $(PRINTF_DIR) fclean
+	$(MAKE_LIB) $(LIBFT_DIR) fclean
 
-clean:
-				$(RM) $(OBJS) $(OBJS_B)
-
-fclean:			clean
-				$(RM) $(NAME)
-
-re:				fclean $(NAME)
-
-.PHONY:			all clean fclean re bonus
+lib_re:
+	$(MAKE_LIB) $(PRINTF_DIR) re
+	$(MAKE_LIB) $(LIBFT_DIR) re
