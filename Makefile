@@ -1,45 +1,33 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cbitca <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/09 16:14:15 by cbitca            #+#    #+#              #
-#    Updated: 2025/04/06 17:46:38 by cbitca           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-LIB_DIR		=	libft
+SRCS_DIR    = srcs
+OBJ_DIR     = obj
+HEADER_DIR  = include
 
-MAKE_LIB	=	@make --no-print-directory -C
+CC          = gcc
+RM          = rm -rf
+AR          = ar rcs
+CFLAGS      = -Wall -Wextra -Werror -I $(HEADER_DIR)
 
-PRINTF_DIR	=	$(LIB_DIR)/ft_printf
-PRINTF_FILE	=	printf.a
-PRINTF		=	$(PRINTF_DIR)/$(PRINTF_FILE)
-CFLAGS		+=	-I$(PRINTF_DIR)/include
-LIB		+=	$(PRINTF)
+NAME        = libft.a
 
-LIBFT_DIR	=	$(LIB_DIR)/libft
-LIBFT_FILE	=	libft.a
-LIBFT		=	$(LIBFT_DIR)/$(LIBFT_FILE)
-CFLAGS		+=	-I$(LIBFT_DIR)/include
-LIB		+=	$(LIBFT)
+SRCS        = $(wildcard $(SRCS_DIR)/*.c)
+OBJS        = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
-$(PRINTF):
-	$(MAKE_LIB) $(PRINTF_DIR)
+all: $(NAME)
 
-$(LIBFT):
-	$(MAKE_LIB) $(LIBFT_DIR)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-lib_clean:
-	$(MAKE_LIB) $(PRINTF_DIR) clean
-	$(MAKE_LIB) $(LIBFT_DIR) clean
+$(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-lib_fclean:
-	$(MAKE_LIB) $(PRINTF_DIR) fclean
-	$(MAKE_LIB) $(LIBFT_DIR) fclean
+clean:
+	$(RM) $(OBJ_DIR)
 
-lib_re:
-	$(MAKE_LIB) $(PRINTF_DIR) re
-	$(MAKE_LIB) $(LIBFT_DIR) re
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

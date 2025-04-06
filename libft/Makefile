@@ -10,36 +10,36 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_DIR		=	srcs
-OBJ_DIR			=	obj
-HEADER_DIR		=	include
+SRCS_DIR    = srcs
+OBJ_DIR     = obj
+HEADER_DIR  = include
 
-CC			= gcc
-RM			= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -I $(HEADER_DIR)
-AR			= ar rcs
+CC          = gcc
+RM          = rm -rf
+CFLAGS      = -Wall -Wextra -Werror -I $(HEADER_DIR)
+AR          = ar rcs
 
-NAME			= libf.a
-BINARY			= out
+NAME        = libft.a
 
-SRCS			=	$(wildcard $(SRCS_DIR)/*.c)
-OBJS			=	$(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+SRCS        = $(wildcard $(SRCS_DIR)/*.c)
+OBJS        = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
-all:			$(NAME)
+all: $(NAME)
 
-$(NAME):		$(OBJS)
-				$(AR) $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
-				@mkdir -p $(OBJ_DIR)
-				$(CC) $(CFLAGS) -c -o $@ $< 
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-				$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ_DIR)
 
-fclean:			clean
-				$(RM) $(BINARY) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re: fclean all
 
-.PHONY:			all clean fclean re
+.PHONY: all clean fclean re
+
