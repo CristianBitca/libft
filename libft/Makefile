@@ -10,24 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_DIR    = srcs
-OBJ_DIR     = obj
-HEADER_DIR  = include
+SRCS_DIR = srcs
+OBJ_DIR = obj
+HEADER_DIR = include
 
-CC          = gcc
-RM          = rm -rf
-CFLAGS      = -Wall -Wextra -Werror -I $(HEADER_DIR)
-AR          = ar rcs
+CC = gcc
+RM = rm -rf
+AR = ar rcs
 
-NAME        = libft.a
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR)
 
-SRCS        = $(wildcard $(SRCS_DIR)/*.c)
-OBJS        = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+NAME = libft.a
+
+SRCS = $(wildcard $(SRCS_DIR)/*.c)
+OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	$(AR) $@ $^
 
 $(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -42,4 +43,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
