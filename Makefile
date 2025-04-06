@@ -1,33 +1,39 @@
 
-SRCS_DIR    = srcs
-OBJ_DIR     = obj
-HEADER_DIR  = include
+LIB_DIR        = libft
 
-CC          = gcc
-RM          = rm -rf
-AR          = ar rcs
-CFLAGS      = -Wall -Wextra -Werror -I $(HEADER_DIR)
+PRINTF_DIR     = $(LIB_DIR)/ft_printf
+PRINTF_FILE    = printf.a
+PRINTF         = $(PRINTF_DIR)/$(PRINTF_FILE)
 
-NAME        = libft.a
+LIBFT_DIR      = $(LIB_DIR)/libft
+LIBFT_FILE     = libft.a
+LIBFT          = $(LIBFT_DIR)/$(LIBFT_FILE)
 
-SRCS        = $(wildcard $(SRCS_DIR)/*.c)
-OBJS        = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+MAKE_LIB       = @make --no-print-directory -C
 
-all: $(NAME)
+CFLAGS         += -I$(PRINTF_DIR)/include -I$(LIBFT_DIR)/include
+LIB            += $(PRINTF) $(LIBFT)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+all: lib
 
-$(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+lib: $(PRINTF) $(LIBFT)
 
-clean:
-	$(RM) $(OBJ_DIR)
+$(PRINTF):
+	$(MAKE_LIB) $(PRINTF_DIR)
 
-fclean: clean
-	$(RM) $(NAME)
+$(LIBFT):
+	$(MAKE_LIB) $(LIBFT_DIR)
 
-re: fclean all
+lib_clean:
+	$(MAKE_LIB) $(PRINTF_DIR) clean
+	$(MAKE_LIB) $(LIBFT_DIR) clean
 
-.PHONY: all clean fclean re
+lib_fclean:
+	$(MAKE_LIB) $(PRINTF_DIR) fclean
+	$(MAKE_LIB) $(LIBFT_DIR) fclean
+
+lib_re:
+	$(MAKE_LIB) $(PRINTF_DIR) re
+	$(MAKE_LIB) $(LIBFT_DIR) re
+
+.PHONY: all lib lib_clean lib_fclean lib_re
