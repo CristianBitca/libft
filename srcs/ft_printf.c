@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	format(va_list args, char c)
 {
@@ -18,19 +18,19 @@ int	format(va_list args, char c)
 
 	var_return = 0;
 	if (c == 'c')
-		var_return += ft_putchr(va_arg(args, int));
+		var_return += pf_putchr(va_arg(args, int));
 	else if (c == 's')
-		var_return += ft_putstr(va_arg(args, char *));
+		var_return += pf_putstr(va_arg(args, char *));
 	else if (c == 'p')
-		var_return += ft_putpointer(va_arg(args, void *));
+		var_return += pf_putpointer(va_arg(args, void *));
 	else if (c == 'i' || c == 'd')
-		var_return += ft_putnbr(va_arg(args, int));
+		var_return += pf_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		var_return += ft_unsigned(va_arg(args, unsigned int));
+		var_return += pf_unsigned(va_arg(args, unsigned int));
 	else if (c == 'x' || c == 'X')
-		var_return += ft_putnbr_hexa(va_arg(args, unsigned int), c);
+		var_return += pf_putnbr_hexa(va_arg(args, unsigned int), c);
 	else if (c == '%')
-		var_return += ft_putchr('%');
+		var_return += pf_putchr('%');
 	return (var_return);
 }
 
@@ -50,7 +50,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			var_return += ft_putchr(*str);
+			var_return += pf_putchr(*str);
 			str++;
 		}
 	}

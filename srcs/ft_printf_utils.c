@@ -10,50 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putchr(int c)
+int	pf_putchr(int c)
 {
 	write (1, &c, 1);
 	return (1);
 }
 
-int	ft_putstr(char *str)
+int	pf_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
-		return (ft_putstr("(null)"));
+		return (pf_putstr("(null)"));
 	while (*str)
 	{
-		ft_putchr(*str++);
+		pf_putchr(*str++);
 		i++;
 	}
 	return (i);
 }
 
-int	ft_putnbr(int n)
+int	pf_putnbr(int n)
 {
 	char	*num;
 	int		res;
 
 	num = ft_itoa(n);
-	res = ft_putstr(num);
+	res = pf_putstr(num);
 	return (res);
 }
 
-int	ft_unsigned(unsigned int n)
+int	pf_unsigned(unsigned int n)
 {
 	char	*num;
 	int		res;
 
-	num = ft_unsigneditoa(n);
-	res = ft_putstr(num);
+	num = ft_utoa(n);
+	res = pf_putstr(num);
 	return (res);
 }
 
-int	ft_putnbr_hexa(unsigned long n, char format)
+int	pf_putnbr_hexa(unsigned long n, char format)
 {
 	char	*base;
 	int		res;
@@ -64,7 +64,7 @@ int	ft_putnbr_hexa(unsigned long n, char format)
 	else if (format == 'X')
 		base = "0123456789ABCDEF";
 	if (n >= 16)
-		res += ft_putnbr_hexa(n / 16, format);
-	res += ft_putchr(base[n % 16]);
+		res += pf_putnbr_hexa(n / 16, format);
+	res += pf_putchr(base[n % 16]);
 	return (res);
 }

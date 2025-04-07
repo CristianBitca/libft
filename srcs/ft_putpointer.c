@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putpointer(void *ptr)
+int	pf_putpointer(void *ptr)
 {
 	int	res;
 
 	res = 0;
 	if (!ptr)
-		return (ft_putstr("(nil)"));
-	res += ft_putstr("0x");
-	res += ft_putnbr_hexa(*(unsigned long *)&ptr, 'x');
+		return (pf_putstr("(nil)"));
+	res += pf_putstr("0x");
+	res += pf_putnbr_hexa(*(unsigned long *)&ptr, 'x');
 	return (res);
 }

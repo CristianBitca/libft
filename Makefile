@@ -5,44 +5,38 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbitca <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/06 18:58:25 by cbitca            #+#    #+#              #
-#    Updated: 2025/04/06 18:58:26 by cbitca           ###   ########.fr        #
+#    Created: 2025/04/07 14:34:26 by cbitca            #+#    #+#              #
+#    Updated: 2025/04/07 14:34:29 by cbitca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+SRCS_DIR = srcs
+OBJ_DIR = obj
+HEADER_DIR = include
 
 CC = gcc
 RM = rm -rf
 AR = ar rcs
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR)
 
-LIBFT_DIR = libft
-PRINTF_DIR = ft_printf
+SRCS = $(wildcard $(SRCS_DIR)/*.c)
+OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
-LIBFT_LIB = $(LIBFT_DIR)/libft.a
-PRINTF_LIB = $(PRINTF_DIR)/printf.a
+all: $(NAME)
 
-all: $(LIBFT_LIB) $(PRINTF_LIB) $(NAME)
+$(NAME): $(OBJS)
+	$(AR) $@ $^
 
-$(LIBFT_LIB):
-	$(MAKE) -C $(LIBFT_DIR)
-
-$(PRINTF_LIB):
-	$(MAKE) -C $(PRINTF_DIR)
-
-$(NAME): $(LIBFT_LIB) $(PRINTF_LIB)
-	$(AR) $(NAME) $(LIBFT_LIB) $(PRINTF_LIB)
-	@echo "✅ $(NAME) created successfully."
+$(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(PRINTF_DIR)
-	$(RM) $(NAME)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	$(MAKE) fclean -C $(LIBFT_DIR)
-	$(MAKE) fclean -C $(PRINTF_DIR)
+	$(RM) $(NAME)
 
 re: fclean all
 
