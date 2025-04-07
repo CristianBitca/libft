@@ -1,15 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cbitca <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/06 17:41:58 by cbitca            #+#    #+#              #
-#    Updated: 2025/04/06 17:41:59 by cbitca           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+NAME = libft.a
 SRCS_DIR = srcs
 OBJ_DIR = obj
 HEADER_DIR = include
@@ -17,10 +6,7 @@ HEADER_DIR = include
 CC = gcc
 RM = rm -rf
 AR = ar rcs
-
 CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR)
-
-NAME = libft.a
 
 SRCS = $(wildcard $(SRCS_DIR)/*.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))

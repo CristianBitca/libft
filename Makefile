@@ -10,42 +10,40 @@
 #                                                                              #
 # **************************************************************************** #
 
-LIB_DIR = libft
+NAME = libft.a
 
-PRINTF_DIR = $(LIB_DIR)/ft_printf
-PRINTF_FILE = printf.a
-PRINTF = $(PRINTF_DIR)/$(PRINTF_FILE)
+CC = gcc
+RM = rm -rf
+AR = ar rcs
+CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_DIR = $(LIB_DIR)/libft
-LIBFT_FILE = libft.a
-LIBFT = $(LIBFT_DIR)/$(LIBFT_FILE)
+LIBFT_DIR = libft
+PRINTF_DIR = ft_printf
 
-MAKE_LIB = @make --no-print-directory -C
+LIBFT_LIB = $(LIBFT_DIR)/libft.a
+PRINTF_LIB = $(PRINTF_DIR)/printf.a
 
-CFLAGS += -I$(PRINTF_DIR)/include -I$(LIBFT_DIR)/include
-LIB += $(PRINTF) $(LIBFT)
+all: $(LIBFT_LIB) $(PRINTF_LIB) $(NAME)
 
-all: lib
+$(LIBFT_LIB):
+	$(MAKE) -C $(LIBFT_DIR)
 
-lib: $(PRINTF) $(LIBFT)
+$(PRINTF_LIB):
+	$(MAKE) -C $(PRINTF_DIR)
 
-$(PRINTF):
-	$(MAKE_LIB) $(PRINTF_DIR)
+$(NAME): $(LIBFT_LIB) $(PRINTF_LIB)
+	$(AR) $(NAME) $(LIBFT_LIB) $(PRINTF_LIB)
+	@echo "✅ $(NAME) created successfully."
 
-$(LIBFT):
-	$(MAKE_LIB) $(LIBFT_DIR)
+clean:
+	$(MAKE) clean -C $(LIBFT_DIR)
+	$(MAKE) clean -C $(PRINTF_DIR)
+	$(RM) $(NAME)
 
-lib_clean:
-	$(MAKE_LIB) $(PRINTF_DIR) clean
-	$(MAKE_LIB) $(LIBFT_DIR) clean
+fclean: clean
+	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(MAKE) fclean -C $(PRINTF_DIR)
 
-lib_fclean:
-	$(MAKE_LIB) $(PRINTF_DIR) fclean
-	$(MAKE_LIB) $(LIBFT_DIR) fclean
+re: fclean all
 
-lib_re:
-	$(MAKE_LIB) $(PRINTF_DIR) re
-	$(MAKE_LIB) $(LIBFT_DIR) re
-
-.PHONY: all lib lib_clean lib_fclean lib_re
-
+.PHONY: all clean fclean re

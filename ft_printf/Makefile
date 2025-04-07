@@ -1,15 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cbitca <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/06 19:30:26 by cbitca            #+#    #+#              #
-#    Updated: 2025/01/06 19:30:28 by cbitca           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+NAME = printf.a
 SRCS_DIR = srcs
 OBJ_DIR = obj
 HEADER_DIR = include
@@ -17,10 +6,7 @@ HEADER_DIR = include
 CC = gcc
 RM = rm -rf
 AR = ar rcs
-
 CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR)
-
-NAME = printf.a
 
 SRCS = $(wildcard $(SRCS_DIR)/*.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
@@ -43,4 +29,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
