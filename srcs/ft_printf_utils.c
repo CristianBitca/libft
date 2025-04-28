@@ -40,6 +40,7 @@ int	pf_putnbr(int n)
 
 	num = ft_itoa(n);
 	res = pf_putstr(num);
+	free(num);
 	return (res);
 }
 
