@@ -1,8 +1,4 @@
-<h1 align="center">🧱 Libft</h1>
-
-<p align="center">
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgitlab.com%2Fraggesilver-42%2Flibft%2F-%2Ftree%2Fmaster&psig=AOvVaw10pMjvdaUzMP5XNO4BT5zV&ust=1763068861265000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCID8ot_G7ZADFQAAAAAdAAAAABAK" alt="Libft Banner" width="80%">
-</p>
+<h1 align="center">📚 Libft</h1>
 
 <p align="center">
   <b>Custom C standard library – built from scratch at 42</b><br>
