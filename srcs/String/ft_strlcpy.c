@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strlcpy
+// ----------------------------
 // Copies up to 'size - 1' characters from the string 'src' to 'dest',
 // null-terminating the result. Returns the total length of 'src'.
 //

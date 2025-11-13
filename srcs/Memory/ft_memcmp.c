@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_memcmp
+// ----------------------------
 // Compares the first 'n' bytes of the memory areas 's1' and 's2'.
 // Each byte is interpreted as an unsigned char.
 //

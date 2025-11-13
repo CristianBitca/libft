@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_count_int
+// ----------------------------
 // Counts the number of characters (including the sign, if negative) 
 // required to represent an integer in decimal form.
 //
@@ -33,6 +36,9 @@ int	ft_count_int(int num)
 	return (i);
 }
 
+//
+// FUNCTION: ft_itoa
+// ----------------------------
 // Converts an integer value to its corresponding null-terminated string representation.
 // Handles negative numbers by including a leading '-' sign.
 //

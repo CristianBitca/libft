@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_isdigit
+// ----------------------------
 // Checks for a digit (0 through 9).
 //
 // RETURN VALUE

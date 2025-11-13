@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstdelone
+// ----------------------------
 // Frees the memory of a single list node 'lst' using the function 'del' to free
 // the content. The memory of the node itself is then freed.
 //

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_putnbr_fd
+// ----------------------------
 // Writes the integer 'n' to the given file descriptor 'fd' as a string of digits.
 // Handles negative numbers by printing a leading '-'.
 //

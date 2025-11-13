@@ -6,6 +6,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/banner.png" alt="Libft Banner" width="800">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/language-C-blue.svg?style=for-the-badge" />
   <img src="https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge" />
   <img src="https://img.shields.io/badge/norminette-passed-success.svg?style=for-the-badge" />

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_isascii
+// ----------------------------
 // Checks whether c is a char value that fits into the ASCII character set.
 //
 // RETURN VALUE

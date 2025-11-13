@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstadd_front
+// ----------------------------
 // Adds the node 'new' at the beginning of the linked list pointed to by 'lst'.
 // The 'new' node becomes the new head of the list.
 //

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_memmove
+// ----------------------------
 // Copies 'n' bytes from memory area 'src' to memory area 'dest'. The memory areas
 // may overlap; copying is performed in a safe manner to avoid data corruption.
 //

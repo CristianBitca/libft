@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strlcat
+// ----------------------------
 // Appends the string 'src' to the end of 'dest'. At most 'size - 1' characters
 // are appended, and the result is null-terminated. Returns the total length
 // of the string it tried to create (initial length of 'dest' + length of 'src').

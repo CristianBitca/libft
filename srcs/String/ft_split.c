@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: count_words
+// ----------------------------
 // Counts the number of words in the string 's', using 'c' as the delimiter.
 //
 // RETURN VALUE
@@ -35,6 +38,9 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
+//
+// FUNCTION: ft_split
+// ----------------------------
 // Splits the string 's' into an array of strings using the character 'c' as a delimiter.
 // Each substring is dynamically allocated. The resulting array is null-terminated.
 //

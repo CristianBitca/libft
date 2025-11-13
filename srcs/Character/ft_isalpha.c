@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_isalpha
+// ----------------------------
 // Checks whether a character is alphabetic or any printable character, including space.
 //
 // RETURN VALUE

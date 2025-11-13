@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_putendl_fd
+// ----------------------------
 // Writes the string 's' to the given file descriptor 'fd', followed by a newline.
 //
 // RETURN VALUE

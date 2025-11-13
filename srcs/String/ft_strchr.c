@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strchr
+// ----------------------------
 // Locates the first occurrence of the character 'c' in the string 's'.
 // The terminating null byte is considered part of the string.
 //

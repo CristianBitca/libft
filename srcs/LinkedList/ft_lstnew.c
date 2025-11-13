@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstnew
+// ----------------------------
 // Allocates and returns a new node of a linked list. The node’s content is set
 // to 'content', and its 'next' pointer is initialized to NULL.
 //

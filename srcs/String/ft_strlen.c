@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strlen
+// ----------------------------
 // Computes the length of the string 's', excluding the terminating null byte.
 //
 // RETURN VALUE

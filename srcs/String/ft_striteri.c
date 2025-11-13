@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_striteri
+// ----------------------------
 // Applies the function 'f' to each character of the string 's', passing the
 // index of the character as the first argument. The function can modify the string in place.
 //

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstlast
+// ----------------------------
 // Returns the last node of the linked list 'lst'.
 // If the list is empty, NULL is returned.
 //

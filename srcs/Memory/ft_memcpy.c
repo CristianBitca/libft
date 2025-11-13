@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_memcpy
+// ----------------------------
 // Copies 'n' bytes from memory area 'src' to memory area 'dest'.
 // The memory areas must not overlap.
 //

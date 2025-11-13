@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_count_unsignedint
+// ----------------------------
 // Counts the number of digits in an unsigned integer.
 //
 // RETURN VALUE
@@ -29,6 +32,9 @@ int	ft_count_unsignedint(unsigned int num)
 	return (i);
 }
 
+//
+// FUNCTION: ft_utoa
+// ----------------------------
 // Allocates and returns a string representing the unsigned integer 'n'.
 //
 // RETURN VALUE

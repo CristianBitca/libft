@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strtrim
+// ----------------------------
 // Allocates and returns a copy of 's1' with characters specified in 'set'
 // removed from the beginning and the end of the string.
 //

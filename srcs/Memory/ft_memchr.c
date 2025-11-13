@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_memchr
+// ----------------------------
 // Scans the first 'n' bytes of the memory area pointed to by 's' for the
 // character 'c'. Comparison is done using unsigned characters.
 //

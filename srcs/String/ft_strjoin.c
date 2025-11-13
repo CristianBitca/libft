@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strjoin
+// ----------------------------
 // Allocates and returns a new string which is the result of the concatenation
 // of 's1' and 's2'.
 //

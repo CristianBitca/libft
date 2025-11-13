@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstmap
+// ----------------------------
 // Iterates over the linked list 'lst' and applies the function 'f' to the content
 // of each node to create a new list. If memory allocation for a new node fails,
 // 'del' is used to free all previously created nodes.

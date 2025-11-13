@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstadd_back
+// ----------------------------
 // Adds the node 'new' to the end of the linked list pointed to by 'lst'.
 // If the list is empty, 'new' becomes the first element.
 //

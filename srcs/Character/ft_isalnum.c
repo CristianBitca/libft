@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_isalnum
+// ----------------------------
 // Checks for an alphanumeric character, it is equivalent to (isalpha(c) || isdigit(c)).
 //
 // RETURN VALUE

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_putstr_fd
+// ----------------------------
 // Writes the string 's' to the given file descriptor 'fd'.
 //
 // RETURN VALUE

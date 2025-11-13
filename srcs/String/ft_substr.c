@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_substr
+// ----------------------------
 // Allocates and returns a substring from the string 's', starting at index 'start'
 // and of maximum length 'n'. If 'start' is greater than the length of 's',
 // an empty string is returned.

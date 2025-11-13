@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strnstr
+// ----------------------------
 // Locates the first occurrence of the null-terminated string 'little'
 // in the string 'big', searching at most 'len' characters.
 //

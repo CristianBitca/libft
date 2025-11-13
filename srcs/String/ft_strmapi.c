@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strmapi
+// ----------------------------
 // Applies the function 'f' to each character of the string 's' to create a
 // new string resulting from successive applications of 'f'. The function
 // receives the index of each character and the character itself.

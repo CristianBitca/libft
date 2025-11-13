@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_atoi
+// ----------------------------
 // The atoi() function converts the initial portion of the string pointed to by nptr to int.
 //
 // RETURN VALUE

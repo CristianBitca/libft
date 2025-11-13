@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_isprint
+// ----------------------------
 // Checks for any printable character including space.
 //
 // RETURN VALUE

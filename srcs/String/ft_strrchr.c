@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strrchr
+// ----------------------------
 // Locates the last occurrence of the character 'chr' in the string 'str'.
 //
 // RETURN VALUE

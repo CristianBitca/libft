@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstclear
+// ----------------------------
 // Deletes and frees all nodes of the linked list pointed to by 'lst' using the
 // function 'del' to free the content of each node. The pointer to the list is
 // set to NULL after all nodes have been deleted.

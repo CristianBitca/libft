@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strdup
+// ----------------------------
 // Allocates memory and returns a new string which is a duplicate of the string 's'.
 //
 // RETURN VALUE

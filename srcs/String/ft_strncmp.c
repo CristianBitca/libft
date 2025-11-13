@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_strncmp
+// ----------------------------
 // Compares at most 'n' characters of the strings 'str1' and 'str2'.
 // The comparison is done using unsigned characters.
 //

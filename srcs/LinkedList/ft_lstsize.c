@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstsize
+// ----------------------------
 // Counts the number of nodes in the linked list 'lst'.
 //
 // RETURN VALUE

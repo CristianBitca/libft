@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//
+// FUNCTION: ft_lstiter
+// ----------------------------
 // Iterates through the linked list 'lst' and applies the function 'f' to the
 // content of each node.
 //
