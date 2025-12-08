@@ -15,7 +15,8 @@
 //
 // FUNCTION: ft_strdup
 // ----------------------------
-// Allocates memory and returns a new string which is a duplicate of the string 's'.
+// Allocates memory and returns a new string which is
+// a duplicate of the string 's'.
 //
 // RETURN VALUE
 //	A pointer to the duplicated string, or NULL if memory allocation fails.

@@ -39,11 +39,14 @@ int	ft_count_int(int num)
 //
 // FUNCTION: ft_itoa
 // ----------------------------
-// Converts an integer value to its corresponding null-terminated string representation.
-// Handles negative numbers by including a leading '-' sign.
+// Converts an integer value to its corresponding
+// null-terminated string representation.
+// Handles negative numbers by including a
+// leading '-' sign.
 //
 // RETURN VALUE
-//	The function returns a pointer to a newly allocated string representing the integer.
+//	The function returns a pointer to a newly
+//	allocated string representing the integer.
 //	If the allocation fails, it returns NULL.
 char	*ft_itoa(int n)
 {

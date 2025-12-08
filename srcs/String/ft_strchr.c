@@ -19,7 +19,8 @@
 // The terminating null byte is considered part of the string.
 //
 // RETURN VALUE
-//	A pointer to the first occurrence of 'c' in 's', or NULL if 'c' is not found.
+//	A pointer to the first occurrence of 'c' in 's',
+//	or NULL if 'c' is not found.
 char	*ft_strchr(const char *s, char c)
 {
 	int	i;

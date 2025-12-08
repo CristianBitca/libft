@@ -18,7 +18,8 @@
 // Locates the last occurrence of the character 'chr' in the string 'str'.
 //
 // RETURN VALUE
-//	A pointer to the last occurrence of 'chr' in 'str', or NULL if 'chr' is not found.
+//	A pointer to the last occurrence of 'chr' in 'str',
+//	or NULL if 'chr' is not found.
 char	*ft_strrchr(char *str, char chr)
 {
 	int		i;

@@ -41,8 +41,10 @@ int	count_words(char const *s, char c)
 //
 // FUNCTION: ft_split
 // ----------------------------
-// Splits the string 's' into an array of strings using the character 'c' as a delimiter.
-// Each substring is dynamically allocated. The resulting array is null-terminated.
+// Splits the string 's' into an array of strings using
+// the character 'c' as a delimiter.
+// Each substring is dynamically allocated.
+// The resulting array is null-terminated.
 //
 // RETURN VALUE
 //	A pointer to the array of substrings, or NULL if memory allocation fails.

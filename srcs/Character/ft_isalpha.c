@@ -15,10 +15,12 @@
 //
 // FUNCTION: ft_isalpha
 // ----------------------------
-// Checks whether a character is alphabetic or any printable character, including space.
+// Checks whether a character is alphabetic or
+// any printable character, including space.
 //
 // RETURN VALUE
-//	The values returned are nonzero if the character c falls into the tested class, and zero if not.
+//	The values returned are nonzero if the
+//	character c falls into the tested class, and zero if not.
 int	ft_isalpha(int c)
 {
 	if (('a' <= c && 'z' >= c)

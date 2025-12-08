@@ -18,7 +18,8 @@
 // Checks for any printable character including space.
 //
 // RETURN VALUE
-//	The values returned are nonzero if the character c falls into the tested class, and zero if not.
+//	The values returned are nonzero if the
+//	character c falls into the tested class, and zero if not.
 int	ft_isprint(int c)
 {
 	if (32 <= c && 126 >= c)

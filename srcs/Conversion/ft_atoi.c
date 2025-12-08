@@ -15,7 +15,8 @@
 //
 // FUNCTION: ft_atoi
 // ----------------------------
-// The atoi() function converts the initial portion of the string pointed to by nptr to int.
+// The atoi() function converts the initial
+// portion of the string pointed to by nptr to int.
 //
 // RETURN VALUE
 //	The converted value or 0 on error.

@@ -19,7 +19,8 @@
 // of 's1' and 's2'.
 //
 // RETURN VALUE
-//	A pointer to the new concatenated string, or NULL if memory allocation fails.
+//	A pointer to the new concatenated string,
+//	or NULL if memory allocation fails.
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*buffer;

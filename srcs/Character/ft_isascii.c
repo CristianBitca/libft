@@ -15,10 +15,12 @@
 //
 // FUNCTION: ft_isascii
 // ----------------------------
-// Checks whether c is a char value that fits into the ASCII character set.
+// Checks whether c is a char value that fits
+// into the ASCII character set.
 //
 // RETURN VALUE
-//	The values returned are nonzero if the character c falls into the tested class, and zero if not.
+//	The values returned are nonzero if the
+//	character c falls into the tested class, and zero if not.
 int	ft_isascii(int c)
 {
 	if (0 <= c && 127 >= c)

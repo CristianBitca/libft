@@ -19,8 +19,9 @@
 // Each byte is interpreted as an unsigned char.
 //
 // RETURN VALUE
-//	An integer less than, equal to, or greater than zero if the first 'n' bytes
-//	of 's1' are found, respectively, to be less than, to match, or be greater than
+//	An integer less than, equal to, or greater than zero
+//	if the first 'n' bytes of 's1' are found, respectively,
+//	to be less than, to match, or be greater than
 //	the first 'n' bytes of 's2'.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

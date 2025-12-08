@@ -15,7 +15,8 @@
 //
 // FUNCTION: ft_putendl_fd
 // ----------------------------
-// Writes the string 's' to the given file descriptor 'fd', followed by a newline.
+// Writes the string 's' to the given file descriptor 'fd',
+// followed by a newline.
 //
 // RETURN VALUE
 //	The function does not return a value.

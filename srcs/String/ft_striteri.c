@@ -16,7 +16,8 @@
 // FUNCTION: ft_striteri
 // ----------------------------
 // Applies the function 'f' to each character of the string 's', passing the
-// index of the character as the first argument. The function can modify the string in place.
+// index of the character as the first argument.
+// The function can modify the string in place.
 //
 // RETURN VALUE
 //	The function does not return a value.

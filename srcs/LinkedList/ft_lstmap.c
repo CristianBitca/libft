@@ -15,12 +15,15 @@
 //
 // FUNCTION: ft_lstmap
 // ----------------------------
-// Iterates over the linked list 'lst' and applies the function 'f' to the content
-// of each node to create a new list. If memory allocation for a new node fails,
+// Iterates over the linked list 'lst' and
+// applies the function 'f' to the content
+// of each node to create a new list. If memory
+// allocation for a new node fails,
 // 'del' is used to free all previously created nodes.
 //
 // RETURN VALUE
-//	A pointer to the first node of the newly created list, or NULL if allocation fails.
+//	A pointer to the first node of the newly created list,
+//	or NULL if allocation fails.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;

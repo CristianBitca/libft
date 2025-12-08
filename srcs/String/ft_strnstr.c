@@ -19,8 +19,9 @@
 // in the string 'big', searching at most 'len' characters.
 //
 // RETURN VALUE
-//	A pointer to the first character of the first occurrence of 'little' in 'big',
-//	or NULL if 'little' is not found. If 'little' is an empty string, returns 'big'.
+//	A pointer to the first character of the first occurrence
+//	of 'little' in 'big', or NULL if 'little' is not found.
+//	If 'little' is an empty string, returns 'big'.
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
