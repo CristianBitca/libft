@@ -84,4 +84,10 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+int	pf_putchr(int c);
+int	pf_putstr(char *str);
+int	pf_putnbr(int n);
+int	pf_unsigned(unsigned int n);
+int	pf_putnbr_hexa(unsigned long n, char format);
+
 #endif
