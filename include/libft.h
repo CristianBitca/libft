@@ -42,6 +42,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_lstsize(t_list *lst);
 int		ft_printf(const char *str, ...);
+int		count_words(char const *s, char c);
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
@@ -84,10 +85,10 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int	pf_putchr(int c);
-int	pf_putstr(char *str);
-int	pf_putnbr(int n);
-int	pf_unsigned(unsigned int n);
-int	pf_putnbr_hexa(unsigned long n, char format);
+int		pf_putchr(int c);
+int		pf_putstr(char *str);
+int		pf_putnbr(int n);
+int		pf_unsigned(unsigned int n);
+int		pf_putnbr_hexa(unsigned long n, char format);
 
 #endif
