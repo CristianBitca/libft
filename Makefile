@@ -1,47 +1,69 @@
-# Library name
-NAME = libft.a
+# =========================
+# Project Configuration
+# =========================
 
-# Directory structure
-SRCS_DIR = srcs
-OBJ_DIR = obj
-HEADER_DIR = include
+NAME        = libft.a
 
-# Compiler and flags
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR)
-AR = ar rcs
-RM = rm -rf
+SRCS_DIR    = srcs
+OBJ_DIR     = obj
+HEADER_DIR  = include
+
+
+# =========================
+# Compiler & Tools
+# =========================
+
+CC          = gcc
+CFLAGS      = -Wall -Wextra -Werror -I$(HEADER_DIR)
+AR          = ar rcs
+RM          = rm -rf
+
+
+# =========================
+# Sources & Objects
+# =========================
 
 # Collect all .c files recursively
-SRCS = $(shell find $(SRCS_DIR) -type f -name "*.c")
+SRCS        = $(shell find $(SRCS_DIR) -type f -name "*.c")
 
 # Generate corresponding .o file paths in obj/ keeping directory structure
-OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJS        = $(SRCS:$(SRCS_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Default rule
+
+# =========================
+# Rules
+# =========================
+
 all: $(NAME)
 
-# Link all object files into the static library
 $(NAME): $(OBJS)
 	@echo "Archiving $(NAME)..."
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(NAME) created successfully!"
+	@echo "✅ $(NAME) created successfully!"
 
-# Compile rule - mirrors directory structure in obj/
 $(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compiled: $<"
 
-# Cleaning rules
+
+# =========================
+# Cleaning
+# =========================
+
 clean:
 	@$(RM) $(OBJ_DIR)
-	@echo "Object files removed."
+	@echo "🧹 Object files removed."
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "Library removed."
+	@echo "🗑️  Library removed."
 
 re: fclean all
+
+
+# =========================
+# Phony Targets
+# =========================
 
 .PHONY: all clean fclean re
