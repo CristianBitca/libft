@@ -21,7 +21,14 @@
 ## 🧩 Overview
 
 **Libft** is a personal C library re-implementing standard library functions and extending them with custom utilities for strings, memory, linked lists, and file I/O.  
-It is the foundation of all future **42 School** projects and a great exercise in low-level programming.
+It is the foundation of all future **42 London** projects and a great exercise in low-level programming.
+
+This library also **directly includes and merges the code** from the next major 42 projects:
+
+- 🔗 <a href="https://github.com/CristianBitca/ft_printf">ft_printf</a> – custom implementation of `printf`
+- 🔗 <a href="https://github.com/CristianBitca/get_next_line">get_next_line</a> – function to read a file line by line
+
+These projects are **not submodules** – their source code is merged into Libft and compiled as a single static library.
 
 ---
 
@@ -40,6 +47,8 @@ libft/
 │   ├── [Output Functions]
 │   ├── [Linked List Functions]
 │   ├── [Utility Functions]
+│   │   ├── ft_printf/
+│   │   └── get_next_line/
 │
 └── Makefile
 ```
@@ -92,12 +101,49 @@ The Makefile automates compilation and creation of the static library **libft.a*
 ✅ 100% written in **C**  
 ✅ Compliant with **Norminette**  
 ✅ Includes **bonus** linked list functions  
-✅ Includes **ft_printf** and **get_next_line**  
+✅ Includes 🔗 <a href="https://github.com/CristianBitca/ft_printf">ft_printf</a> and 🔗 <a href="https://github.com/CristianBitca/get_next_line">get_next_line</a>  
 ✅ Modular structure with clear headers and Makefile automation  
 
 ---
 
-## 🧪 Example Usage
+## 🚀 How to Use Libft in Your Project
+
+### 1️⃣ Clone Libft
+
+```bash
+git clone https://github.com/bitcacristi/libft.git
+```
+
+### 2️⃣ Build the library
+
+```bash
+cd libft
+make
+```
+
+### 3️⃣ Include headers
+
+```c
+#include "libft.h"
+```
+
+### 4️⃣ Compile with Libft
+
+```bash
+gcc main.c -L. -lft -Iinclude && ./a.out
+```
+
+####  Or in your Makefile:
+
+```makefile
+LIBFT = libft/libft.a
+
+$(NAME): $(OBJS)
+	make -C libft
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+```
+
+### 🧪 Example Usage
 
 ```c
 #include "libft.h"
@@ -106,17 +152,10 @@ The Makefile automates compilation and creation of the static library **libft.a*
 int main(void)
 {
     char *s = ft_strdup("Hello Libft!");
-    printf("%s\n", s);
+    ft_printf("%s\n", s);
     free(s);
     return 0;
 }
-```
-
-Compile & run:
-
-```bash
-make
-gcc main.c -L. -lft -Iinclude && ./a.out
 ```
 
 Output:
